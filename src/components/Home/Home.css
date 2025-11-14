@@ -63,6 +63,46 @@
   transform: scale(1.05);
 }
 
+@keyframes fadeUpSmooth {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home h1,
+.home .subtitle,
+.home .btn,
+.home .sertificate {
+  opacity: 0;
+  animation: fadeUpSmooth 1s ease-out forwards;
+  animation-delay: 0.2s; 
+}
+
+.highlight {
+  color: teal;
+  display: inline-block;
+  animation: floatSmooth 3s ease-in-out infinite;
+}
+
+@keyframes floatSmooth {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.sertificate:hover {
+  transform: scale(1.03);
+}
+
 @media (max-width: 768px) {
   .home {
     min-height: 50vh;
