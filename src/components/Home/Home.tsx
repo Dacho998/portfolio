@@ -12,7 +12,7 @@ export default function Home() {
     <>
       <div className="home">
         <h1>
-          Hi, I’m <span className="highlight">David Krstevski</span>, <br /> web developer
+          Hi, I’m <span className="highlight">David Krstevski</span> <br /> web developer
         </h1>
         <p className="subtitle">&lt;𝓹&gt;</p>
         <p className="subtitle">𝓕𝓾𝓵𝓵 𝓼𝓽𝓪𝓬𝓴 𝔀𝓮𝓫 𝓓𝓮𝓿𝓮𝓵𝓸𝓹𝓮𝓻</p>
