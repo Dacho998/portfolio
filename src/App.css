@@ -1,0 +1,33 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background: #111; 
+  color: #fff;      
+  transition: background 0.3s, color 0.3s;
+}
+
+.app {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  background: #111;
+  color: #fff;
+  transition: background 0.3s, color 0.3s;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app.dark {
+  background: #111;
+  color: #fff;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  padding: 10vh;
+  flex-direction: column;
+  box-sizing: border-box; 
+}

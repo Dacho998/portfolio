@@ -1,0 +1,23 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  cursor: zoom-out;
+}
+
+.fullscreen-img {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.7);
+  animation: zoomIn 0.3s ease-in-out;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0.3; }
+  to { transform: scale(1); opacity: 1; }
+}
