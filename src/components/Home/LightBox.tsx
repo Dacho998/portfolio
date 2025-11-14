@@ -1,4 +1,4 @@
-import "./Lightbox.css";
+import "./LightBox.css";
 
 interface LightboxProps {
   src: string | null;
