@@ -1,29 +1,39 @@
 .projects-grid {
-  margin-top: 1rem;
-  text-align: center;
-  display: flex;
-  flex-wrap: wrap;
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  justify-content: center;
+  justify-items: center;
   padding: 1rem;
 }
 
 .projects-grid h2 {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   font-size: 2.2rem;
   color: teal;
   border-bottom: 3px solid teal;
   display: inline-block;
   padding-bottom: 0.3rem;
-  width: fit-content; /* линијата колку текстот */
+  width: fit-content;
 }
 
-/* APPEAR ANIMATION */
 .project-card {
   opacity: 0;
-  transform: translateY(40px) scale(0.95);
-  transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
+  transform: translateY(50px) scale(0.95);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out,
+    box-shadow 0.3s ease;
+  background: #f9f9f9;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  padding: 1.5rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
 }
 
 .project-card.show {
@@ -31,60 +41,65 @@
   transform: translateY(0) scale(1);
 }
 
-/* Stagger */
-.project-card:nth-child(2) { transition-delay: 0.15s; }
-.project-card:nth-child(3) { transition-delay: 0.3s; }
-
-/* CARD DESIGN */
 .project-card {
-  background: #f9f9f9;
-  border-radius: 12px;
-  width: 350px;
-  max-width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  cursor: pointer;
-  padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  --delay: 0s;
+  transition-delay: var(--delay);
+}
+
+.project-card:nth-child(1) {
+  --delay: 0s;
+}
+.project-card:nth-child(2) {
+  --delay: 0.1s;
+}
+.project-card:nth-child(3) {
+  --delay: 0.2s;
+}
+.project-card:nth-child(4) {
+  --delay: 0.3s;
+}
+.project-card:nth-child(5) {
+  --delay: 0.4s;
+}
+
+.app.dark .project-card {
+  background: #1c1c1c;
+}
+
+.project-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.app.dark .project-card { background: #1c1c1c; }
-
-.project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
-}
-
-/* IMAGE FIX */
 .project-card img {
   width: 100%;
-  height: auto;       /* зачува aspect ratio */
-  max-height: 215px;  /* ограничување */
+  height: auto;
+  max-height: 220px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 12px;
   margin-bottom: 1rem;
 }
 
-/* TEXT */
 .project-card h3 {
   margin: 0.5rem 0;
   color: teal;
-  font-size: 1.3rem;
+  font-size: 1.35rem;
+  transition: color 0.3s ease;
 }
 
 .project-card p {
   font-size: 1rem;
   color: #333;
   margin-bottom: 1rem;
-  line-height: 1.4;
+  line-height: 1.5;
+  transition: color 0.3s ease;
 }
 
-.app.dark .project-card p { color: #ccc; }
+.app.dark .project-card p {
+  color: #ccc;
+}
 
-/* LINKS */
 .links {
   display: flex;
   gap: 1rem;
@@ -100,31 +115,48 @@
   text-decoration: none;
   color: #fff;
   font-weight: 500;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
 }
 
 .links a:hover {
   background: #006666;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
 
-/* RESPONSIVE */
 @media (max-width: 1024px) {
-  .project-card { width: 45%; }
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+    .project-card {
+    max-width: 240px;
+  }
 }
 
 @media (max-width: 768px) {
   .projects-grid {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: 1fr;
   }
-  .project-card { width: 90%; }
+   .project-card img {
+    max-height: 200px; 
+  }
 }
 
 @media (max-width: 480px) {
-  .project-card { width: 100%; padding: 1rem; }
-  .project-card h3 { font-size: 1.1rem; }
-  .project-card p { font-size: 0.95rem; }
-  .links a { font-size: 0.9rem; padding: 0.4rem 0.8rem; }
+  .project-card {
+    padding: 1rem;
+  }
+  .project-card h3 {
+    font-size: 1.2rem;
+  }
+  .project-card p {
+    font-size: 0.95rem;
+  }
+  .links a {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+    .project-card img {
+    max-height: 150px; 
+  }
 }
