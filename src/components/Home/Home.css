@@ -2,13 +2,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 60vh; /* подобро од фиксно */
+  min-height: 60vh; 
   padding: 2rem;
   text-align: center;
 }
 
 .home h1 {
-  font-size: clamp(1.8rem, 4vw, 3rem); /* <— супер responsive */
+  font-size: clamp(1.8rem, 4vw, 3rem); 
   line-height: 1.2;
 }
 
@@ -32,7 +32,7 @@
   transition: 0.2s;
   font-size: 1.3rem;
   display: inline-block;
-  width: fit-content; /* <— НЕ фиксна ширина */
+  width: fit-content; 
   margin: 1rem auto 0;
 }
 
@@ -48,11 +48,11 @@
   align-items: center;
   gap: 1.5rem;
   margin-top: 2.5rem;
-  flex-wrap: wrap; /* <— важно за мобилни */
+  flex-wrap: wrap; 
 }
 
 .sertificate {
-  width: clamp(120px, 30vw, 260px); /* <— премногу подобро од проценти */
+  width: clamp(120px, 30vw, 260px); 
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
@@ -63,15 +63,18 @@
   transform: scale(1.05);
 }
 
-/* ===========================
-   📱 MOBILE RESPONSIVE
-   =========================== */
 @media (max-width: 768px) {
   .home {
     min-height: 50vh;
     padding: 1rem;
   }
+  .highlight {
+    font-size: 2.2rem;
+  }
 
+  .subtitle{
+    font-size: 1.5rem;
+  }
   .btn {
     font-size: 1.2rem;
     padding: 0.8rem 1.6rem;
@@ -82,6 +85,6 @@
   }
 
   .sertificate {
-    width: 70%; /* прекрасен изглед на мобилен */
+    width: 90%; 
   }
 }
