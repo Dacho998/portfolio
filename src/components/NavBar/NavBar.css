@@ -43,7 +43,7 @@
   top: 1rem;
   left: 1rem;
   z-index: 1100;
-  font-size: 2rem;
+  font-size: 2.5rem;
   cursor: pointer;
   color: teal;
 }
@@ -53,6 +53,7 @@
     transform: translateX(-100%);
     transition: transform 0.3s ease;
     width: 180px;
+    padding: 5rem 1rem;
   }
 
   .navbar.open {
