@@ -1,39 +1,44 @@
-.projects-grid {
-  margin-top: 2rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  justify-items: center;
-  padding: 1rem;
+.projects {
+  margin-top: 1rem;
+  text-align: center;
 }
 
-.projects-grid h2 {
+.projects h2 {
+  width: 100%;
   text-align: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
   font-size: 2.2rem;
   color: teal;
   border-bottom: 3px solid teal;
   display: inline-block;
   padding-bottom: 0.3rem;
-  width: fit-content;
+  width: 70%;
+}
+
+.projects-grid {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
 .project-card {
-  opacity: 0;
-  transform: translateY(50px) scale(0.95);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out,
-    box-shadow 0.3s ease;
   background: #f9f9f9;
-  border-radius: 14px;
-  width: 100%;
-  max-width: 350px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  width: 320px;
   cursor: pointer;
-  padding: 1.5rem;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  text-align: center;
+
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
 }
 
 .project-card.show {
@@ -41,69 +46,58 @@
   transform: translateY(0) scale(1);
 }
 
-.project-card {
-  --delay: 0s;
-  transition-delay: var(--delay);
-}
-
-.project-card:nth-child(1) {
-  --delay: 0s;
-}
-.project-card:nth-child(2) {
-  --delay: 0.1s;
-}
-.project-card:nth-child(3) {
-  --delay: 0.2s;
-}
-.project-card:nth-child(4) {
-  --delay: 0.3s;
-}
-.project-card:nth-child(5) {
-  --delay: 0.4s;
-}
+.project-card:nth-child(1) { transition-delay: 0.1s; }
+.project-card:nth-child(2) { transition-delay: 0.25s; }
 
 .app.dark .project-card {
   background: #1c1c1c;
 }
 
 .project-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform: translateY(-10px) scale(1.1) rotate(-3deg);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+  background: teal;
+  color: white;
 }
 
 .project-card img {
   width: 100%;
-  height: auto;
-  max-height: 220px;
+  height: 180px;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 10px;
   margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+  object-position: top;
 }
 
 .project-card h3 {
   margin: 0.5rem 0;
-  color: teal;
   font-size: 1.35rem;
-  transition: color 0.3s ease;
+  color: teal;
+}
+
+.project-card:hover h3 {
+  color: white;
 }
 
 .project-card p {
   font-size: 1rem;
-  color: #333;
   margin-bottom: 1rem;
+  color: #333;
   line-height: 1.5;
-  transition: color 0.3s ease;
 }
 
 .app.dark .project-card p {
   color: #ccc;
 }
 
+.project-card:hover p {
+  color: white;
+}
+
 .links {
   display: flex;
   gap: 1rem;
-  flex-wrap: wrap;
   justify-content: center;
 }
 
@@ -118,45 +112,60 @@
   transition: all 0.25s ease;
 }
 
+.project-card:hover .links a {
+  background: white;
+  color: teal;
+}
+
 .links a:hover {
-  background: #006666;
   transform: translateY(-3px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width: 1024px) {
-  .projects-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+@media (max-width: 1280px) {
+  .project-card {
+    width: 300px;
+    padding: 1.7rem;
   }
-    .project-card {
-    max-width: 240px;
+  .project-card img {
+    height: 170px;
   }
 }
-
 @media (max-width: 768px) {
   .projects-grid {
-    grid-template-columns: 1fr;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
-   .project-card img {
-    max-height: 200px; 
+
+  .project-card {
+    width: 90%;
+    max-width: 350px;
+  }
+
+  .project-card img {
+    height: 160px;
   }
 }
-
 @media (max-width: 480px) {
   .project-card {
     padding: 1rem;
+    width: 95%;
   }
+
   .project-card h3 {
     font-size: 1.2rem;
   }
+
   .project-card p {
-    font-size: 0.95rem;
-  }
-  .links a {
     font-size: 0.9rem;
-    padding: 0.4rem 0.8rem;
   }
-    .project-card img {
-    max-height: 150px; 
+
+  .project-card img {
+    height: 140px;
+  }
+
+  .links a {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
   }
 }
