@@ -1,11 +1,12 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   min-height: 100%;
   box-sizing: border-box;
   overflow-x: hidden;
-  background: #111; 
-  color: #fff;      
+  background: #111;
+  color: #fff;
   transition: background 0.3s, color 0.3s;
 }
 
@@ -16,7 +17,7 @@ html, body {
   background: #111;
   color: #fff;
   transition: background 0.3s, color 0.3s;
-   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .app.dark {
@@ -29,5 +30,68 @@ html, body {
   display: flex;
   padding: 10vh;
   flex-direction: column;
-  box-sizing: border-box; 
+  box-sizing: border-box;
+}
+.btn,
+button {
+  padding: 1rem 2rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-teal,
+button {
+  background-color: teal;
+  color: #fff;
+}
+
+.btn-teal:hover,
+button:hover {
+  background: #006666;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.projects h2,
+.contact h2,
+.skills h2 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  color: teal;
+  border-bottom: 3px solid teal;
+  display: inline-block;
+  padding-bottom: 0.3rem;
+  width: 70%;
+}
+
+.skill-card,
+.project-card {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.skill-card.show,
+.project-card.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.skills-grid .skill-card:nth-child(1),
+.project-card:nth-child(1) {
+  transition-delay: 0.1s;
+}
+.skills-grid .skill-card:nth-child(2),
+.project-card:nth-child(2) {
+  transition-delay: 0.25s;
+}
+
+.skills-grid .skill-card:nth-child(3) {
+  transition-delay: 0.4s;
 }

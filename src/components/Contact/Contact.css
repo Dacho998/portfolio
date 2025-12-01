@@ -11,16 +11,6 @@
   gap: 2rem;
 }
 
-.contact h2 {
-  font-size: 2.2rem;
-  color: teal;
-  border-bottom: 3px solid teal;
-  display: inline-block;
-  padding-bottom: 0.3rem;
-  width: fit-content;     
-  margin-bottom: 1rem;
-}
-
 .contact form {
   width: 100%;
   max-width: 500px;     
@@ -56,23 +46,6 @@
   outline: none;
   border-color: teal;
   box-shadow: 0 0 8px rgba(0,128,128,0.2);
-}
-
-.contact button {
-  padding: 1rem;
-  border: none;
-  border-radius: 8px;
-  background: teal;
-  color: #fff;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.contact button:hover {
-  background: #006666;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .contact-info {
